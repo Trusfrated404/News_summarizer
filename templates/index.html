@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NewsLens | Intelligent News Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <section class="hero"><span class="eyebrow">NLP · LLM · NEWS INTELLIGENCE</span><h1>Make sense of<br><i>what matters.</i></h1><p>Turn long-form news into concise, useful insight in seconds.</p></section>
+    <section class="workspace">
+      <div class="input-panel">
+        <div class="panel-heading"><div><span class="step">01</span><h2>Add an article</h2></div><button id="sampleBtn" class="text-btn">Load sample</button></div>
+        <textarea id="article" placeholder="Paste a news article here…"></textarea>
+        <div class="input-footer"><span id="wordCounter">0 words</span><button id="analyzeBtn">Analyze article <span>→</span></button></div>
+      </div>
+      <div id="emptyState" class="empty-state"><div class="spark">✦</div><h2>Your brief, distilled.</h2><p>Paste an article to reveal its summary, tone, people, places, and key ideas.</p></div>
+      <section id="results" hidden>
+        <div class="result-top"><div><span class="step">02</span><h2>Analysis brief</h2></div><span id="sourceBadge" class="badge"></span></div>
+        <article class="summary-card"><h3>In brief</h3><p id="summary"></p></article>
+        <div class="metrics"><article><span class="metric-label">Sentiment</span><strong id="sentiment"></strong><small id="sentimentDetail"></small></article><article><span class="metric-label">Reading time</span><strong id="readingTime"></strong><small id="wordCount"></small></article></div>
+        <div class="tag-section"><h3>Key topics</h3><div id="keywords" class="tags"></div></div>
+        <div class="tag-section"><h3>People & places</h3><div id="entities" class="tags entities"></div></div>
+        <section class="qa"><div><span class="step">03</span><h2>Ask the article</h2></div><div class="question-row"><input id="question" placeholder="What would you like to know?"><button id="askBtn">Ask</button></div><p id="answer" hidden></p></section>
+      </section>
+    </section>
+  </main>
+  <div id="toast" role="alert"></div><script src="{{ url_for('static', filename='app.js') }}"></script>
+</body></html>
