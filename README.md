@@ -2,6 +2,10 @@
 
 NewsLens is an interactive web application that helps users quickly understand long news articles. It uses Natural Language Processing (NLP) to summarize articles, detect sentiment, extract keywords and entities, and answer questions based on the supplied article.
 
+## Live Demo
+
+Use the deployed application here: **[Open NewsLens](https://newslens-8859.onrender.com)**
+
 ## Project Objectives
 
 - Perform NLP preprocessing on news text.
